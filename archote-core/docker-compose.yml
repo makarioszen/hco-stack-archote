@@ -14,6 +14,16 @@ services:
       POSTGRES_DB: "n8n"
     volumes:
       - archote_postgres_data:/var/lib/postgresql/data
+      - ../dumps:/docker-entrypoint-initdb.d/dumps:ro
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        if [ "$${RESTORE_DB}" = "true" ] && [ ! -f /var/lib/postgresql/data/.dump_restored ]; then
+          echo "==== Executando Auto-Restore do Banco Archote ===="
+          cat /docker-entrypoint-initdb.d/dumps/*.part_* > /docker-entrypoint-initdb.d/01_restore_archote.sql 2>/dev/null || true
+          touch /var/lib/postgresql/data/.dump_restored
+        fi
+        exec docker-entrypoint.sh postgres
 
   pgadmin:
     image: dpage/pgadmin4
