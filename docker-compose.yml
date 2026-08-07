@@ -54,7 +54,6 @@ services:
       EXECUTIONS_DATA_SAVE_ON_SUCCESS: none
       EXECUTIONS_DATA_SAVE_ON_ERROR: all
       N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
-      N8N_USER_FOLDER: /data
     depends_on:
       - postgres
       - redis
@@ -107,7 +106,6 @@ services:
       EXECUTIONS_DATA_SAVE_ON_SUCCESS: none
       EXECUTIONS_DATA_SAVE_ON_ERROR: all
       N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
-      N8N_USER_FOLDER: /data
     depends_on:
       - postgres
       - redis_ppa
