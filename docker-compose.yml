@@ -29,8 +29,8 @@ services:
   # Archote Industria
   n8n:
     image: makarioszen/i9dig-n8n
-    labels:
-      - "coolify.fqdn=https://coolify-archote-n8n.inovage.digital"
+    ports:
+      - 5678:5678
     environment:
       NODE_ENV: production
       N8N_BASIC_AUTH_ACTIVE: "true"
@@ -81,8 +81,8 @@ services:
 
   n8n_ppa:
     image: makarioszen/i9dig-n8n
-    labels:
-      - "coolify.fqdn=https://coolify-archote-ppa.inovage.digital"
+    ports:
+      - 5678:5678
     environment:
       NODE_ENV: production
       N8N_BASIC_AUTH_ACTIVE: "true"
