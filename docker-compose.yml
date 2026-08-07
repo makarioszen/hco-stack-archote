@@ -17,8 +17,6 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
-    labels:
-      - "coolify.fqdn=https://coolify-archote-pgadmin.inovage.digital"
     environment:
       PGADMIN_DEFAULT_EMAIL: "marco.martins@inovage.com.br"
       PGADMIN_DEFAULT_PASSWORD: "${N8N_BASIC_AUTH_PASSWORD}"
