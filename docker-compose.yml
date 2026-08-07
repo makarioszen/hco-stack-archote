@@ -8,6 +8,15 @@ services:
     volumes:
       - archote_postgres_data:/var/lib/postgresql/data
 
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "marco.martins@inovage.com.br"
+      PGADMIN_DEFAULT_PASSWORD: "${N8N_BASIC_AUTH_PASSWORD:-SK1@saphaarchote.local}"
+      PGADMIN_DISABLE_EMAIL_CHECK: "True"
+    depends_on:
+      - postgres
+
   # Archote Industria
   n8n:
     image: makarioszen/i9dig-n8n
