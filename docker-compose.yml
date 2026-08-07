@@ -28,7 +28,7 @@ services:
   n8n:
     image: makarioszen/i9dig-n8n
     ports:
-      - 5679:5678
+      - 5678:5678
     environment:
       NODE_ENV: production
       N8N_USER_FOLDER: /data
@@ -80,7 +80,7 @@ services:
   n8n_ppa:
     image: makarioszen/i9dig-n8n
     ports:
-      - 5678:5678
+      - 5679:5678
     environment:
       NODE_ENV: production
       N8N_USER_FOLDER: /data
