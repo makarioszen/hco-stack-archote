@@ -35,7 +35,7 @@ services:
       EXECUTIONS_PROCESS: main
       EXECUTIONS_DATA_SAVE_ON_SUCCESS: none
       EXECUTIONS_DATA_SAVE_ON_ERROR: all
-      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY:-archoteipaas}
     depends_on:
       - postgres
       - redis
@@ -83,7 +83,7 @@ services:
       EXECUTIONS_PROCESS: main
       EXECUTIONS_DATA_SAVE_ON_SUCCESS: none
       EXECUTIONS_DATA_SAVE_ON_ERROR: all
-      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY:-archoteipaas}
     depends_on:
       - postgres
       - redis_ppa
